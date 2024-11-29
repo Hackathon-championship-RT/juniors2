@@ -15,6 +15,7 @@ const App = () => {
 		[2, 0, 1],
 		[0, 1, 1],
 		[0.5, 0.5, 2],
+		[1, 1, 1]
 	])
 
 	const [g, setG] = useState([
@@ -38,7 +39,7 @@ const App = () => {
 		},
 		{
 			left: [],
-			right: [],
+			right: [5],
 			top: [4],
 			bottom: []
 		},
@@ -46,18 +47,25 @@ const App = () => {
 			left: [],
 			right: [],
 			top: [],
-			bottom: [0, 1, 3]
+			bottom: [0, 1, 3, 5]
 		},
+		{
+			left: [3],
+			right: [],
+			top: [4],
+			bottom: []
+		}
 	])
 
-	const [elements, setElements] = useState([0, 1, 2, 3])
+	const [elements, setElements] = useState([0, 1, 2, 3, 4, 5])
 
 	const [tilesInfo, setTilesInfo] = useState([
 		{name: "Mers"},
 		{name: "Bmw"},
-		{name: "Mers"},
 		{name: "Bmw"},
-		{name: "Lada"}
+		{name: "Bmw"},
+		{name: "Bmw"},
+		{name: "Mers"}
 	])
 
 
@@ -66,7 +74,15 @@ const App = () => {
 
 	return (
 		<div className={modules.container}>
-			<TilesField coordinats={coordinats} g={g} elements={elements} tilesInfo={tilesInfo} size={size} />
+			<TilesField 
+				coordinats={coordinats} 
+				g={g} 
+				elements={elements} 
+				tilesInfo={tilesInfo} 
+				size={size} 
+				setElements={setElements}
+				setG={setG}
+			/>
 		</div>
 
 	)

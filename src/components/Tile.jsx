@@ -11,7 +11,6 @@ const Tile = ({ x, y, z, info, number, neighbors, handleChoosing, choosed }) => 
 		if (neighbors) {
 			if((!neighbors.left.length || !neighbors.right.length) && !neighbors.top.length) setIsFree(true)
 		}
-
 	}, [neighbors])
 
 	
@@ -22,7 +21,7 @@ const Tile = ({ x, y, z, info, number, neighbors, handleChoosing, choosed }) => 
 				setWrongChoose(false)
 			}, 300)
 		} else {
-			
+			handleChoosing(number)
 		}
 
 	}
@@ -33,7 +32,7 @@ const Tile = ({ x, y, z, info, number, neighbors, handleChoosing, choosed }) => 
 	
 
 	return (
-		<div style={{ left: 100 * x, top: 200 * y, z_index: z }} className={modules.tile_container}>
+		<div style={{ left: 100 * x, top: 200 * y, zIndex: z }} className={modules.tile_container}>
 			<div 
 			className={`${modules.tile_inner} ${choosed && modules.choosed} ${wrongChoose && modules.wrong_choosed}` } 
 			onClick={handleClick}
