@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import * as modules from '@styles/tile.module.css'
 
-const Tile = ({ x, y, z, info, number, neighbors, handleChoosing, choosed }) => {
-	const [isFree, setIsFree] = useState(false)
+const Tile = ({ x, y, z, info, number, isFree, handleChoosing, choosed }) => {
 	const [wrongChoose, setWrongChoose] = useState(false)
-
-
-
-	useEffect(() => {
-		if (neighbors) {
-			if((!neighbors.left.length || !neighbors.right.length) && !neighbors.top.length) setIsFree(true)
-		}
-	}, [neighbors])
 
 	
 	const handleClick = () => {

@@ -82,6 +82,7 @@ const App = () => {
 				size={size} 
 				setElements={setElements}
 				setG={setG}
+				setTilesInfo={setTilesInfo}
 			/>
 		</div>
 

@@ -3,10 +3,39 @@ import { useState } from 'react'
 import * as modules from '@styles/tilesField.module.css'
 import Tile from './Tile'
 import delElements from '@utils/delElements'
+import findFreeElements from '../utils/findFreeElements'
+import swapElements from '../utils/swapElements'
+import findPairs from '../utils/findPairs'
 
-const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, setG }) => {
+const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, setG, setTilesInfo }) => {
 
 	const [choosedTiles, setChoosedTiles] = useState([])
+	const [freeElements, setFreeElements] = useState([])
+	const [pair, setPair] = useState([])
+
+	useEffect(() => {
+		setFreeElements(findFreeElements(elements, g))
+	}, [elements])
+
+
+
+	const handleSwapping = () => {
+		let notPair = true
+		let swappedNames =[...tilesInfo]
+		let newPair = []
+		let freeEls = []
+		while (notPair) {
+			swappedNames  = swapElements(swappedNames )
+			freeEls = findFreeElements([...elements] , g)
+			newPair = findPairs(freeEls, swappedNames)
+			if (newPair.length) notPair = false
+		}
+		setPair([...newPair])
+		setTilesInfo([...swappedNames ])
+
+	}
+
+
 
 	const handleChoosing = (index) => {
 		if (!choosedTiles.length) setChoosedTiles([index])
@@ -19,10 +48,14 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 		}
 	}
 
+	useEffect(() => {
+		console.log("-------", elements, "-------")
+	}, [elements])
 
 
 
-	return (
+
+	return (<div>
 		<div className={modules.field} style={{ width: size[0] * 100, height: size[1] * 200 }}>
 			{elements.map((elem) => (
 				<Tile key={elem}
@@ -31,7 +64,7 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 					z={coordinats[elem][2]}
 					info={tilesInfo[elem]}
 					number={elem}
-					neighbors={{...g[elem]}}
+					isFree={freeElements.includes(elem)}
 					handleChoosing={handleChoosing}
 					choosed={choosedTiles.includes(elem) ? true : false}
 				/>
@@ -40,6 +73,8 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 
 			}
 		</div>
+		<button onClick={handleSwapping}>перемешать</button>
+	</div>
 	)
 }
 
