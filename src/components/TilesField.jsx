@@ -12,6 +12,9 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 	const [choosedTiles, setChoosedTiles] = useState([])
 	const [freeElements, setFreeElements] = useState([])
 	const [pair, setPair] = useState([])
+	const [lastInfo, setLastInfo] = useState([...tilesInfo])
+	const [lastElements, setLastElements] = useState([...elements])
+	const [lastG, setLastG] = useState([...g])
 
 	useEffect(() => {
 		setFreeElements(findFreeElements(elements, g))
@@ -21,38 +24,39 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 
 	const handleSwapping = () => {
 		let notPair = true
-		let swappedNames =[...tilesInfo]
+		let swappedInfo =[...tilesInfo]
 		let newPair = []
 		let freeEls = []
 		while (notPair) {
-			swappedNames  = swapElements(swappedNames )
+			swappedInfo  = swapElements(elements, swappedInfo )
 			freeEls = findFreeElements([...elements] , g)
-			newPair = findPairs(freeEls, swappedNames)
+			newPair = findPairs(freeEls, swappedInfo)
 			if (newPair.length) notPair = false
 		}
 		setPair([...newPair])
-		setTilesInfo([...swappedNames ])
+		setLastInfo([...tilesInfo])
+		setTilesInfo([...swappedInfo ])
 
 	}
-
-
 
 	const handleChoosing = (index) => {
 		if (!choosedTiles.length) setChoosedTiles([index])
 		else if (index == choosedTiles[0]) setChoosedTiles([])
 		else if (tilesInfo[index].name != tilesInfo[choosedTiles[0]].name) setChoosedTiles([index])
 		else {
+			setLastG([...g])
 			setG([...delElements(index, choosedTiles[0], g)])
+			setLastElements([...elements])
 			setElements(elements.filter(elem => (elem !== index && elem !== choosedTiles[0])))
 			setChoosedTiles([])
 		}
 	}
 
-	useEffect(() => {
-		console.log("-------", elements, "-------")
-	}, [elements])
-
-
+	const toPrevState = () => {
+		setElements([...lastElements])
+		setTilesInfo([...lastInfo])
+		setG([...lastG])
+	}
 
 
 	return (<div>
@@ -74,6 +78,7 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 			}
 		</div>
 		<button onClick={handleSwapping}>перемешать</button>
+		<button onClick={toPrevState}>предыдущее состояние</button>
 	</div>
 	)
 }

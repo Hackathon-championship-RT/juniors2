@@ -1,10 +1,10 @@
 
 
-const swapElements = (names) => {
+const swapElements = (elements, names) => {
 	let newNames = [...names]
-	for (let i = newNames.length - 1; i > 0; i--) {
+	for (let i = elements.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1)); // Генерируем случайный индекс  
-		[newNames[i], newNames[j]] = [newNames[j], newNames[i]]; // Обмен значениями  
+		[newNames[elements[i]], newNames[elements[j]]] = [newNames[elements[j]], newNames[elements[i]]]; // Обмен значениями  
 	}
 	return newNames
 }
