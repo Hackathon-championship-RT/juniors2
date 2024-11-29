@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('when');
             $table->string('who');
             $table->string('country');
-            $table->string('where');
-            $table->text('description');
             $table->text('fact');
             $table->timestamps();
         });
