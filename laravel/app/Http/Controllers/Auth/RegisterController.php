@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,6 +52,21 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'name.required' => 'Поле "Имя" обязательно для заполнения.',
+            'name.string' => 'Поле "Имя" должно быть строкой.',
+            'name.max' => 'Поле "Имя" не должно превышать 255 символов.',
+
+            'email.required' => 'Поле "Email" обязательно для заполнения.',
+            'email.string' => 'Поле "Email" должно быть строкой.',
+            'email.email' => 'Введите корректный адрес электронной почты.',
+            'email.max' => 'Поле "Email" не должно превышать 255 символов.',
+            'email.unique' => 'Этот адрес электронной почты уже используется.',
+
+            'password.required' => 'Поле "Пароль" обязательно для заполнения.',
+            'password.string' => 'Поле "Пароль" должно быть строкой.',
+            'password.min' => 'Пароль должен содержать не менее 8 символов.',
+            'password.confirmed' => 'Пароли не совпадают.',
         ]);
     }
 

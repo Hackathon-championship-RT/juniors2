@@ -2,14 +2,12 @@
     <div class="row g-0 p-3">
         <div class="p-3">
             <div class="card-body" style="border:1px solid rgb(204, 204, 204); border-radius: 7px">
-                <h5 class="card-title pb-3 text-center"><a style="color:black" href="{{ route('event', ['id' => $event['event_id']]) }}" }>{{ $event['name'] }}</a></h5>
-                <p class="badge bg-primary">{{ $event['sport'][0] }}</p>
-                <p class="card-text pt-3 pb-3">{{ $event['status'] }}</p>
-                <p class="card-text pt-3 pb-3 ">{{ $event['start']}} -> {{ $event['end'] }}</p>
-                <p class="card-text">{{ $event['gender_age']}}</p>
-                <p class="card-text">{{ $event['address']}}</p>
-                <p class="card-text">{{ $event['count'] }}</p>
+                <h5 class="card-title pb-3 text-center">Уровень {{ $levels[$i]['level_number'] }}. {{ $levels[$i]['name'] }}</h5>
+                <p class="badge bg-primary">Количество костей: {{ $levels[$i]['count_chips'] }}</p>
+                <p class="card-text pt-3 pb-3">Количество времени: {{ $levels[$i]['time'] }}</p>
+                <p class="card-text">{{ $levels[$i]['category']['description'] }}</p>
 
+                <a href="{{ route('level', ['level_id' => $levels[$i]['level_id']]) }}" class="btn btn-primary text-center w-100">Играть!</a>
             </div>
         </div>
     </div>

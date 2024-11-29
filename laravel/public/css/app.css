@@ -1,0 +1,87 @@
+.lk_button:hover {
+    outline: 1px solid #40ba21;
+    background: none;
+    color: #40ba21;
+}
+
+.lk_button {
+    text-decoration: none;
+    transition: all .2s;
+    margin:  0 0 0 5px;
+    border: none;
+    background: #40ba21;
+    display: inline-flex;
+    height: 44px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: white;
+}
+
+body {
+    background: #edf1f5;
+}
+
+div {
+    font-family: 'Montserrat';
+}
+.navbar-brand {
+    font-weight: bold; /* Для выделения логотипа жирным */
+}
+
+.nav-item {
+    margin: 0 10px; /* Добавляем немного маргина между пунктами навигации */
+}
+
+.navbar-nav {
+    flex-direction: row; /* Указываем элементам навигации располагаться в ряд */
+}
+
+.navbar-collapse {
+    justify-content: center; /* Центрируем элементы навигации */
+}
+
+.navbar-toggler {
+    float: right; /* Кнопка мобильного меню будет справа */
+}
+
+.login {
+    border-radius: 0;
+    padding: 10px;
+    margin: auto;
+}
+
+.back-img {
+    background: url("../img/phone.jpg") fixed;
+    height: 150px;
+}
+
+.about_home {
+    text-align: justify;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    border: 1px solid #40ba21;
+    padding: 30px;
+}
+
+.block {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 30px;
+    color: white;
+    text-align: justify
+}
+
+.block:nth-child(even) {
+    background-color: #40ba21; /* Задаем фоновый цвет */
+    color: white;
+    max-width: 500px;
+}
+
+.block:nth-child(odd) {
+    border: 2px solid #40ba21; /* Задаем границу */
+    color: black;
+    max-width: 700px;
+}
