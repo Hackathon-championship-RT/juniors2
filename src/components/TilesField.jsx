@@ -34,7 +34,10 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 			if (newPair.length) notPair = false
 		}
 		setPair([...newPair])
+		setLastElements([...elements])
+		setLastG([...g])
 		setLastInfo([...tilesInfo])
+		console.log([...tilesInfo])
 		setTilesInfo([...swappedInfo ])
 
 	}
@@ -44,6 +47,7 @@ const TilesField = ({ coordinats, g, elements, tilesInfo, size, setElements, set
 		else if (index == choosedTiles[0]) setChoosedTiles([])
 		else if (tilesInfo[index].name != tilesInfo[choosedTiles[0]].name) setChoosedTiles([index])
 		else {
+			setLastInfo([...tilesInfo])
 			setLastG([...g])
 			setG([...delElements(index, choosedTiles[0], g)])
 			setLastElements([...elements])
