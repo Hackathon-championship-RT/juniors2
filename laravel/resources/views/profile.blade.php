@@ -85,7 +85,7 @@
             <div class="d-flex">
                 @if($user['email'] != null)
                     <div class="" style="color: gray; display: flex">
-                        <h6 style="line-height: 30px; margin-left: 8px;">Эл почта</h6>
+                        <h6 style="line-height: 30px; margin-left: 8px;">Почта</h6>
                     </div>
                     <div class="" style="margin-left: 45px">
                         <div class="d-flex" style="align-items: center">
@@ -123,8 +123,8 @@
             </div>
             <form action="{{ route('add_avatar') }}" class="mb-5" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input name="avatar" type="file" placeholder="Выберите фотографию" class="form-control w-50 mt-4 mb-3">
-                <button type="submit" class="lk_button">
+                <input style="border-radius: 0" name="avatar" type="file" placeholder="Выберите фотографию" class="form-control w-50 mt-4 mb-3">
+                <button type="submit" class="lk_button m-0">
                     Изменить
                 </button>
             </form>

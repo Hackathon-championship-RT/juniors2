@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon1.ico') }}" type="image/x-icon">
 
 {{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 </head>
@@ -50,20 +50,19 @@
     </style>
     <div class="wrapper">
         <div id="app">
-            <nav class="navbar navbar-expand-md" style="z-index: 10;">
-                <div class="container mt-2">
+            <nav class="navbar navbar-expand-md">
+                <div class="container">
                     <a class="logo navbar-brand d-flex nav-link text-black" href="{{ url('/') }}">
-                        <h1 style="font-family: 'Montserrat'; font-weight: 600;">{{ __('AUTOMAHJONG') }}</h1>
+                        <h1 style="font-family: 'Montserrat'; font-weight: 600; margin: auto;">{{ __('AUTOMAHJONG') }}</h1>
                     </a>
-                    @guest
-                    @else
-                        <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    @endguest
-                    <div class="collapse navbar-expand-xl d-flex">
+
+                    <button class="header_name navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Меню навигации" style="border-radius: 0">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse navbar-expand-xl d-flex" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
 
@@ -120,8 +119,7 @@
 
                                         </div>
                                         <a
-                                            href="{{ route('profile') }}" class='lk_button'
-                                            style=" ">
+                                            href="{{ route('profile') }}" class='lk_button'>
                                             <h6 class="m-1">
                                                 Профиль
                                             </h6>
@@ -130,6 +128,7 @@
                                 </div>
                             @endguest
                         </ul>
+
                     </div>
                 </div>
             </nav>
@@ -143,7 +142,7 @@
         <footer>
             <h2 class="">О НАС</h2>
             <div class="container">
-                <h6 class="text-center mt-5 mb-5">Наша команда, которая никак  не связана с американскими бургерами, представялет свой проект - игровая платформа AUTOMAHJONG</h6>
+                <h6 class="text-center mt-5 mb-5">Наша команда, которая никак  не связана с американскими бургерами, представялет свой проект: игровая платформа AUTOMAHJONG</h6>
                 <p>Наша команда:</p>
                 <p><b>Кузнецов Тимофей</b> - TeamLeader, инициатор, секретерша</p>
                 <p><b>Габдуллин Артем</b> - FullStack, создатель шедевральной игры</p>

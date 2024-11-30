@@ -134,6 +134,7 @@
                         @endif
 
                         @if (!empty($game_stories))
+                            <h5>Твой личный рейтинг завершенных игр</h5>
                             <table class="table mt-3">
                                 <thead>
                                 <tr>

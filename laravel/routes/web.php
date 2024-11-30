@@ -16,7 +16,7 @@ Auth::routes();
 
 // Все страницы сайта
 
-Route::get('/home', [HomeController::class, 'home'])->name('home');
+//Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/levels', [HomeController::class, 'levels'])->name('levels');
 Route::get('/level', [HomeController::class, 'level'])->name('level');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');

@@ -129,7 +129,7 @@ class HomeController extends Controller
     {
         $user = $this->GetUserId();
 
-        $game_stories = GameStory::where('user_id', $user['id'])->get()->toArray();
+        $game_stories = GameStory::orderBy('time', 'asc')->where('user_id', $user['id'])->get()->toArray();
         for($i=0;$i<count($game_stories);$i++){
             $game_stories[$i]['level'] = Level::where('level_id', $game_stories[$i]['level_id'])->first()->toArray();
             $game_stories[$i]['category'] = Category::where('category_id', $game_stories[$i]['level']['category_id'])->first()->toArray();
