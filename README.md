@@ -27,7 +27,6 @@ npm run build
 ```
 cd laravel
 php artisan key:generate
-php artisan migrate
 (если необходимо создать базу данных)
 yes
 php artisan storage:link
