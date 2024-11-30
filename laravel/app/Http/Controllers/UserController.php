@@ -31,7 +31,7 @@ class UserController extends Controller
         return redirect()->route('profile');
     }
 
-    public function add_avatar()
+    public function add_avatar() // Функция добавления фотографии пользователю и сохранение в системе и в таблице данных
     {
         $request = request()->validate([
             'avatar' => ['required'],

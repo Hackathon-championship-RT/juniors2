@@ -55,13 +55,14 @@
                     <a class="logo navbar-brand d-flex nav-link text-black" href="{{ url('/') }}">
                         <h1 style="font-family: 'Montserrat'; font-weight: 600; margin: auto;">{{ __('AUTOMAHJONG') }}</h1>
                     </a>
-
+                    @guest
+                    @else
                     <button class="header_name navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Меню навигации" style="border-radius: 0">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    @endguest
                     <div class="collapse navbar-collapse navbar-expand-xl d-flex" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
@@ -140,7 +141,7 @@
         </div>
 
         <footer>
-            <h2 class="">О НАС</h2>
+            <h2>О НАС</h2>
             <div class="container">
                 <h6 class="text-center mt-5 mb-5">Наша команда, которая никак  не связана с американскими бургерами, представялет свой проект: игровая платформа AUTOMAHJONG</h6>
                 <p>Наша команда:</p>

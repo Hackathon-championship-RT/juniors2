@@ -24,6 +24,8 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    // Этот контроллер используется только авторизированными пользователями
     public function __construct()
     {
         $this->middleware('auth');
@@ -36,6 +38,7 @@ class HomeController extends Controller
 
      */
 
+    // Функция получения информации о пользователе по ему ID
     public function GetUserId() // Функция для нахождения записи пользователя в бд, которая будет вызываться в других контроллерах
     {
         $id = Auth::id();
@@ -45,6 +48,7 @@ class HomeController extends Controller
         return $user;
     }
 
+    // Страница со всеми уровнями игры, $levels - массив с уровнями
     public function levels()
     {
         $user = $this->GetUserId();
@@ -62,10 +66,10 @@ class HomeController extends Controller
             $levels[$i]['time'] = "Минут: $totalMinutes, Секунд: $seconds";
         }
 
-//        dd($levels);
         return view('levels', compact('user', 'levels'));
     }
 
+    // Домашняя страница сайта - визитка
     public function home()
     {
         $user = $this->GetUserId();
@@ -73,6 +77,7 @@ class HomeController extends Controller
         return view('home', compact('user'));
     }
 
+    // Страница с профилем пользователя
     public function profile()
     {
         $user = $this->GetUserId();
@@ -80,6 +85,7 @@ class HomeController extends Controller
         return view('profile', compact('user'));
     }
 
+    // Страница с игрой, которая получает по http-запросу id уровня, а затем находит его в базе данных
     public function level()
     {
         $user = $this->GetUserId();
@@ -95,6 +101,7 @@ class HomeController extends Controller
         return view('level', compact('user', 'brands', 'level'));
     }
 
+    // Страница с отображением добавления почты для пользователя
     public function add_email()
     {
         $user = $this->GetUserId();
@@ -106,6 +113,7 @@ class HomeController extends Controller
         }
     }
 
+    // Страница со списком лидеров $grouped_game_stories - массив со всеми законченными играми
     public function leaderboard()
     {
         $user = $this->GetUserId();
@@ -125,6 +133,7 @@ class HomeController extends Controller
         return view('leaderboard', compact('user', 'game_stories', 'categories', 'grouped_game_stories', 'levels'));
     }
 
+    // Страница со всеми играми пользователя, которые он прошел $game_stories - массив со всеми сыгранными уровнями пользователя
     public function game_story()
     {
         $user = $this->GetUserId();
