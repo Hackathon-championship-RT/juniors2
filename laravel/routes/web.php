@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TelegramController;
 use App\Http\Controllers\UserController;
@@ -32,6 +33,9 @@ Route::get('/login_telegram', [TelegramController::class, 'login_telegram'])->na
 
 Route::post('/add_email', [UserController::class, 'add_email'])->name('add_email');
 Route::post('/add_avatar', [UserController::class, 'add_avatar'])->name('add_avatar');
+Route::post('/get_config', [DataController::class, 'getData'])->name('get_config');
+Route::post('/send_result', [DataController::class, 'send_result'])->name('send_result');
+
 
 // Работа с Telegram`ом
 

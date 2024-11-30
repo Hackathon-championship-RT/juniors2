@@ -29,7 +29,7 @@
                                 <tbody>
                                 @foreach($game_stories as $game)
                                     <tr>
-                                        <td>Уровень {{ $game['level']['level_number'] }}. {{ $game['level']['name'] }}</td>
+                                        <td>{{ $game['placement'] }}</td>
                                         <td>{{ $game['time'] }}</td>
                                     </tr>
                                 @endforeach

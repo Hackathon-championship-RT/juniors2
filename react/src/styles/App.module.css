@@ -17,7 +17,7 @@
 
 .main_buttons {
 	width: 100%;
-	height: 15%;
+	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -53,4 +53,26 @@
 	gap: 10px;
 	flex-shrink: 0;
 	color: white;
+}
+footer p {
+	font-family: 'Montserrat';
+}
+
+button h6, div h6, footer h2 {
+	font-family: 'Montserrat';
+}
+
+.wrapper footer {
+	padding: 50px 0;
+	background: #12152a;
+	color: white;
+}
+
+footer h2 {
+	margin: 50px 0 0 0;
+	text-align: center;
+}
+
+.member b {
+	font-weight: bold;
 }

@@ -1,31 +1,34 @@
 import React, { useState } from 'react'
 import * as modules from '@styles/form.module.css'
+import fetchData from "@utils/fetchData";
 
 const complexityVariants = [
-	"Super easy",
 	"Easy",
 	"Medium",
 	"Hard",
-	"Super Hard"
 ]
 
 const themeVariants = [
-	"All themes",
-	"European",
-	"Electro",
-	"Retro",
-	"Chinese"
+	"Все",
+	"Европейская классика",
+	"Культовые американцы",
+	"Самураи скорости",
+	"Гоночные легенды",
+	"Ретро-автомобили",
+	"Суперкары и гиперкары",
 ]
 
 const mapVariants = [
-	"Turtle",
-	"Tower",
-	"Car",
-	"Box",
-	"Bonus - BMW"
+	"STATION",
+	"BMW",
+	"DOLINA",
+	"PLOSKO",
+	"CASTLE",
+	"ROCKS",
+	"STOGI",
 ]
 
-const Form = ({setGameInfo, getDefault}) => {
+const Form = ({setGameInfo, getDefault, setSearching, setInfo, setLoading}) => {
 
 	const [complexity, setComplexity] = useState(2)
 	const [theme, setTheme] = useState(0)
@@ -39,12 +42,15 @@ const Form = ({setGameInfo, getDefault}) => {
 		if(index != map) setMap(index)
 	}
 
-	const handleSubmit = () => {
-		console.log({
+	const handleSubmit = async () => {
+		setLoading(true)
+		setSearching(1)
+		fetchData({
 			complexity: complexityVariants[complexity],
 			theme: themeVariants[theme],
 			map: mapVariants[map]
-		})
+		}, setInfo)
+		setSearching(2)
 		//setGameInfo, load it
 	}
 

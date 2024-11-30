@@ -25,7 +25,7 @@ const Tile = ({ x, y, z, info, number, isFree, handleChoosing, choosed, toHelp }
 	const images = importAll(require.context('../img/brands', false, /\.(png|jpe?g|svg)$/));
 
 	return (
-		<div style={{ left: 70 * x, top: 100 * y, zIndex: z }} className={modules.tile_container}>
+		<div style={{ left: (40 * x -((z-1)*7)), top: (70 * y - ((z-1)*7)), zIndex: z }} className={modules.tile_container}>
 			<div 
 			className={`${modules.tile_inner} ${choosed && modules.choosed} ${wrongChoose && modules.wrong_choosed} ${toHelp && modules.help}` } 
 			onClick={handleClick}
@@ -36,7 +36,7 @@ const Tile = ({ x, y, z, info, number, isFree, handleChoosing, choosed, toHelp }
 					{/* <span>
 						x={x} y={y} z={z}
 					</span> */}
-					<img src={images['Acura.png'].default} alt="" className={modules.tile_img} />
+					<img src={images[info.image] ? images[info.image].default : images['Acura.png'].default} alt="" className={modules.tile_img} />
 					{/*<h1 style={{fontSize: 20}}>{info.name}</h1>*/}
 					{/*<h1 style={{fontSize: 20}}>{number}</h1>*/}
 					{/*<h1 style={{fontSize: 20}}>{isFree ? <span>yes</span> : <span>no</span>}</h1>*/}

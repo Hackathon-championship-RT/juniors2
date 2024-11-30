@@ -63,4 +63,8 @@ module.exports = {
 			template: path.join(__dirname, "src", "index.html"),
 		}),
 	],
+	performance: {
+		maxEntrypointSize: 1024000,
+		maxAssetSize: 1024000
+	},
 }

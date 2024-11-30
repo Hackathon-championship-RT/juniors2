@@ -121,12 +121,10 @@ class HomeController extends Controller
         $levels = Level::all()->sortBy('level_number')->toArray();
         $categories = Category::all()->toArray();
         for($i=0;$i<count($game_stories);$i++){
-            $game_stories[$i]['level'] = Level::where('level_id', $game_stories[$i]['level_id'])->first()->toArray();
-            $game_stories[$i]['category'] = Category::where('category_id', $game_stories[$i]['level']['category_id'])->first()->toArray();
             $game_stories[$i]['user'] = User::where('id', $game_stories[$i]['user_id'])->first()->toArray();
         }
 
-        $grouped_game_stories = collect($game_stories)->groupBy('level_id')->toArray();
+        $grouped_game_stories = collect($game_stories)->groupBy('placement')->toArray();
 
 //        dd($grouped_game_stories);
 
@@ -139,11 +137,7 @@ class HomeController extends Controller
         $user = $this->GetUserId();
 
         $game_stories = GameStory::orderBy('time', 'asc')->where('user_id', $user['id'])->get()->toArray();
-        for($i=0;$i<count($game_stories);$i++){
-            $game_stories[$i]['level'] = Level::where('level_id', $game_stories[$i]['level_id'])->first()->toArray();
-            $game_stories[$i]['category'] = Category::where('category_id', $game_stories[$i]['level']['category_id'])->first()->toArray();
-            // сделать изменение формы времени
-        }
+
 //        dd($game_stories);
         return view('story', compact('user', 'game_stories'));
     }
