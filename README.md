@@ -27,12 +27,11 @@ npm run build
 ```
 cd laravel
 php artisan key:generate
-(если необходимо создать базу данных)
-yes
 php artisan storage:link
 ```
 ### Запуск сервера:
 ```
 php artisan serve
 ```
+в базу данных экспортируйт файл *.sql, предложенный в main ветке
 ## На локальном сервере вход через Telegram не работает, потому что для этого требуется настройка виртуальных хостов в Windows.
