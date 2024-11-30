@@ -16,28 +16,28 @@ return [
     'public_path' => null,  // Override the public path if needed
 
     /*
-     * Dejavu Sans font is missing glyphs for converted entities, turn it off if you need to show € and £.
+     * Dejavu Sans fonts is missing glyphs for converted entities, turn it off if you need to show € and £.
      */
     'convert_entities' => true,
 
     'options' => [
         /**
-         * The location of the DOMPDF font directory
+         * The location of the DOMPDF fonts directory
          *
-         * The location of the directory where DOMPDF will store fonts and font metrics
+         * The location of the directory where DOMPDF will store fonts and fonts metrics
          * Note: This directory must exist and be writable by the webserver process.
          * *Please note the trailing slash.*
          *
          * Notes regarding fonts:
-         * Additional .afm font metrics can be added by executing load_font.php from command line.
+         * Additional .afm fonts metrics can be added by executing load_font.php from command line.
          *
          * Only the original "Base 14 fonts" are present on all pdf viewers. Additional fonts must
          * be embedded in the pdf file or the PDF may not display correctly. This can significantly
-         * increase file size unless font subsetting is enabled. Before embedding a font please
-         * review your rights under the font license.
+         * increase file size unless fonts subsetting is enabled. Before embedding a fonts please
+         * review your rights under the fonts license.
          *
-         * Any font specification in the source HTML is translated to the closest font available
-         * in the font directory.
+         * Any fonts specification in the source HTML is translated to the closest fonts available
+         * in the fonts directory.
          *
          * The pdf standard "Base 14 fonts" are:
          * Courier, Courier-Bold, Courier-BoldOblique, Courier-Oblique,
@@ -48,9 +48,9 @@ return [
         'font_dir' => storage_path('fonts'), // advised by dompdf (https://github.com/dompdf/dompdf/pull/782)
 
         /**
-         * The location of the DOMPDF font cache directory
+         * The location of the DOMPDF fonts cache directory
          *
-         * This directory contains the cached font metrics for the fonts used by DOMPDF.
+         * This directory contains the cached fonts metrics for the fonts used by DOMPDF.
          * This directory can be the same as DOMPDF_FONT_DIR
          *
          * Note: This directory must exist and be writable by the webserver process.
@@ -107,7 +107,7 @@ return [
         'log_output_file' => null,
 
         /**
-         * Whether to enable font subsetting or not.
+         * Whether to enable fonts subsetting or not.
          */
         'enable_font_subsetting' => false,
 
@@ -122,7 +122,7 @@ return [
          *
          * Both PDFLib & CPDF rendering backends provide sufficient rendering
          * capabilities for dompdf, however additional features (e.g. object,
-         * image and font support, etc.) differ between backends.  Please see
+         * image and fonts support, etc.) differ between backends.  Please see
          * {@link PDFLib_Adapter} for more information on the PDFLib backend
          * and {@link CPDF_Adapter} and lib/class.pdf.php for more information
          * on CPDF. Also see the documentation for each backend at the links
@@ -172,9 +172,9 @@ return [
         'default_paper_orientation' => 'portrait',
 
         /**
-         * The default font family
+         * The default fonts family
          *
-         * Used if no suitable fonts can be found. This must exist in the font folder.
+         * Used if no suitable fonts can be found. This must exist in the fonts folder.
          *
          * @var string
          */
@@ -204,9 +204,9 @@ return [
          *   SystemControl->Display properties->FontResolution: Default:96, largefonts:120, custom:?
          * Linux Firefox:
          *   about:config *resolution: Default:96
-         *   (xorg screen dimension in mm and Desktop font dpi settings are ignored)
+         *   (xorg screen dimension in mm and Desktop fonts dpi settings are ignored)
          *
-         * Take care about extra font/image zoom factor of browser.
+         * Take care about extra fonts/image zoom factor of browser.
          *
          * In images, <img> size in pixel attribute, img css style, are overriding
          * the real image dimension in px for rendering.

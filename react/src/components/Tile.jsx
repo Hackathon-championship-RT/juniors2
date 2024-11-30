@@ -17,10 +17,12 @@ const Tile = ({ x, y, z, info, number, isFree, handleChoosing, choosed, toHelp }
 
 	}
 
-	
-
-
-	
+	function importAll(r) {
+		let images = {};
+		r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+		return images;
+	}
+	const images = importAll(require.context('../img/brands', false, /\.(png|jpe?g|svg)$/));
 
 	return (
 		<div style={{ left: 70 * x, top: 100 * y, zIndex: z }} className={modules.tile_container}>
@@ -29,14 +31,15 @@ const Tile = ({ x, y, z, info, number, isFree, handleChoosing, choosed, toHelp }
 			onClick={handleClick}
 			>
 				<div 
-				className={modules.tile_content} 
+				className={modules.tile_content}
 				>
 					{/* <span>
 						x={x} y={y} z={z}
 					</span> */}
-					<h1 style={{fontSize: 20}}>{info.name}</h1>
-					<h1 style={{fontSize: 20}}>{number}</h1>
-					<h1 style={{fontSize: 20}}>{isFree ? <span>yes</span> : <span>no</span>}</h1>
+					<img src={images['Acura.png'].default} alt="" className={modules.tile_img} />
+					{/*<h1 style={{fontSize: 20}}>{info.name}</h1>*/}
+					{/*<h1 style={{fontSize: 20}}>{number}</h1>*/}
+					{/*<h1 style={{fontSize: 20}}>{isFree ? <span>yes</span> : <span>no</span>}</h1>*/}
 				</div>
 			</div>
 		</div>

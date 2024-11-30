@@ -6,8 +6,8 @@
 }
 
 .tile_inner {
+	display: flex;
 	position: relative;
-	display: block;
 	width: 100%;
 	height: 100%;
 	background-color: #fff; /* цвет фона */  
@@ -26,10 +26,15 @@
 }
 
 .tile_content {
-	margin: 10px;
+	width: 90%;
+	margin: auto 10px auto 0;
 	
 }
 
 .help {
 	background-color: #e6bc4b;
+}
+
+.tile_img {
+	width: 100%;
 }

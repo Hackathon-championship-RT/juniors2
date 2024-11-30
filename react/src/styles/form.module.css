@@ -1,0 +1,56 @@
+.card {
+	max-width: 800px;
+	margin: 50px auto 0 auto;
+}
+
+.h1 {
+	text-align: center;
+	margin: 10px 0;
+	font-size: 20px;
+}
+
+.input_range {
+	width: 100%;
+	accent-color: #40ba21;
+}
+
+.lk_button:hover {
+	outline: 1px solid #40ba21;
+	background: none;
+	color: #40ba21;
+}
+
+.lk_button {
+	text-decoration: none;
+	transition: all .2s;
+	margin:  0 0 0 5px;
+	border: none;
+	background: #40ba21;
+	display: inline-flex;
+	height: 44px;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	color: white;
+}
+
+.list_div {
+	display: block;
+}
+
+.list_div label {
+	align-content: center;
+	display: flex;
+	margin: 10px 0;
+}
+
+.list_div label input {
+	margin: auto 10px;
+}
+
+.input_select {
+	accent-color: #40ba21;
+	border: none;
+}

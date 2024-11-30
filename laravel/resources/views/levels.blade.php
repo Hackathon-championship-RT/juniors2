@@ -9,7 +9,7 @@
 
             <div id="study">
 
-                <h2 class="text-center">Уровни игры</h2>
+                <h1 class="text-center">Уровни игры</h1>
                 <div class='levels_container'>
                     <div class="levels_inner" id="root">
 

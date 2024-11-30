@@ -234,3 +234,11 @@ tr:nth-child(3) td {
     width: 90vw;
     height: 70vh;
 }
+
+#root {
+    font-family: 'Montserrat';
+}
+
+#study {
+    font-family: 'Montserrat';
+}

@@ -13,8 +13,13 @@ module.exports = {
 				use: ['@svgr/webpack'],
 			},
 			{
-				test: /\.(png|jp(e*)g|svg|gif)$/,
-				use: ['file-loader'],
+				test: /\.(png|jpg|gif)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {}
+					}
+				]
 			},
 			{
 				test: /\.css$/,
@@ -48,7 +53,7 @@ module.exports = {
 			'@config': path.resolve(__dirname, 'src/config'),
 			'@page': path.resolve(__dirname, 'src/pages'),
 			'@routes': path.resolve(__dirname, 'src/routes'),
-			'@services': path.resolve(__dirname, 'src/services'),
+			// '@brands': path.resolve(__dirname, 'src/img/brands'),
 			'@utils': path.resolve(__dirname, 'src/utils'),
 			'@styles': path.resolve(__dirname, 'src/styles'),
 		},
