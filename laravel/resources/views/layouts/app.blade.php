@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AUTOMAHJONG</title>
+    <title>CARJONG</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -53,7 +53,7 @@
             <nav class="navbar navbar-expand-md">
                 <div class="container">
                     <a class="logo navbar-brand d-flex nav-link text-black" href="{{ url('/') }}">
-                        <h1 style="font-family: 'Montserrat'; font-weight: 600; margin: auto;">{{ __('AUTOMAHJONG') }}</h1>
+                        <h1 style="font-family: 'Montserrat'; font-weight: 600; margin: auto;">{{ __('CARJONG') }}</h1>
                     </a>
                     @guest
                     @else
