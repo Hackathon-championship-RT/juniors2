@@ -1,0 +1,21 @@
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.game_window {
+	width: 100%;
+	height: 85%;
+}
+
+.main_buttons {
+	width: 100%;
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}

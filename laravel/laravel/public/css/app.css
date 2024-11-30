@@ -1,0 +1,177 @@
+.lk_button:hover {
+    outline: 1px solid #40ba21;
+    background: none;
+    color: #40ba21;
+}
+
+.lk_button {
+    text-decoration: none;
+    transition: all .2s;
+    margin:  0 0 0 5px;
+    border: none;
+    background: #40ba21;
+    display: inline-flex;
+    height: 44px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: white;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #edf1f5;
+}
+
+div {
+    font-family: 'Montserrat';
+}
+.navbar-brand {
+    font-weight: bold; /* Для выделения логотипа жирным */
+}
+
+.nav-item {
+    margin: 0 10px; /* Добавляем немного маргина между пунктами навигации */
+}
+
+.navbar-nav {
+    flex-direction: row; /* Указываем элементам навигации располагаться в ряд */
+}
+
+.navbar-collapse {
+    justify-content: center; /* Центрируем элементы навигации */
+}
+
+.navbar-toggler {
+    float: right; /* Кнопка мобильного меню будет справа */
+}
+
+.login {
+    border-radius: 0;
+    padding: 10px;
+    margin: auto;
+}
+
+.back-img {
+    background: url("../img/phone.jpg") fixed;
+    height: 200px;
+}
+
+.back-img2 {
+    background: url("../img/phone2.jpg") fixed no-repeat center     / cover;
+    height: 200px;
+}
+
+.about_home {
+    background: white;
+    text-align: justify;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    /*border: 1px solid #40ba21;*/
+    padding: 30px;
+}
+
+.block {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 30px;
+    color: white;
+    text-align: justify
+}
+
+.block:nth-child(even) {
+    background-color: #40ba21; /* Задаем фоновый цвет */
+    color: white;
+    max-width: 500px;
+}
+
+.block:nth-child(odd) {
+    border: 1px solid #40ba21; /* Задаем границу */
+    color: black;
+    max-width: 700px;
+}
+
+.logo h1 {
+    transition: all .15s;
+}
+
+.logo:hover h1 {
+    color: #40ba21;
+
+}
+
+footer {
+
+    padding: 50px 0;
+    background: #12152a;
+    color: white;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+#app {
+    flex: 1 1 auto;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-link {
+    line-height: 30px;
+    margin-right: 6px;
+    color: black;
+    transition: .15s;
+}
+
+.a-link:hover {
+    color: #40ba21;
+}
+
+.table tbody {
+    padding: 10px 0;
+    background: none;
+}
+
+.a-header:hover h6 {
+    transition: all .15s;
+    color: #40ba21;
+}
+
+img {
+    transition: opacity 0.2s ease; /* Плавный переход для изменения прозрачности */
+    opacity: 1; /* Исходная непрозрачность */
+}
+
+img.fade-out {
+    opacity: 0; /* Прозрачность при уходе */
+}
+
+td, th {
+    border: none;
+}
+
+
+tr td {
+    align-content: center;
+}
+
+tr:first-child td {
+    background: #ffe88c;
+}
+
+tr:nth-child(2) td {
+    background: #f1f1f1;
+}
+
+tr:nth-child(3) td {
+    background: #e6b07e;
+}
