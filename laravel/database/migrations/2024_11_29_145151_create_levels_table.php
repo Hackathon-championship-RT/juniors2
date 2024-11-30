@@ -18,7 +18,8 @@ return new class extends Migration
             $table->time('time')->default('00:10:00');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('count_chips')->default(20);
+            $table->unsignedBigInteger('placement_id');
+            $table->foreign('placement_id')->references('placement_id')->on('placements')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

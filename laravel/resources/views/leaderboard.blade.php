@@ -7,7 +7,7 @@
 
             <div id="study">
 
-                <h2 class="text-center">Уровни игры</h2>
+                <h2 class="text-center">Таблица лидеров</h2>
 
                 <div class='container'>
 {{--                    <form action="{{ route('search') }}" id="searchLessonForm">--}}
@@ -127,18 +127,57 @@
 {{--                    </form>--}}
 
                     <div class="lesson_all">
-                        @if (empty($levels))
+                        @if (empty($game_stories))
                             <div>
-                                <h4>Ничего не найдено</h4>
+                                <h6 class="text-center mt-5 mb-5">Ещё пока никто не сыграл в эту игру...(</h6>
                             </div>
                         @endif
 
-                        @if (!empty($levels))
-                                <div class="anket_all d-flex flex-wrap mt-3 mb-3">
-                                @for($i=0;$i<count($levels);$i++)
-                                    @include('search_card')
-                                @endfor
-                            </div>
+                        @if (!empty($game_stories))
+                            <h4 class="mt-3 mb-5">Общая таблица по времени:</h4>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Уровень</th>
+                                        <th>Место</th>
+                                        <th>Имя</th>
+                                        <th>Время</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($game_stories as $game)
+                                        <tr>
+                                            <td>Уровень {{ $game['level']['level_number'] }}. {{ $game['level']['name'] }}</td>
+                                            <td>{{ $game['story_id'] }}</td>
+                                            <td style="display: flex; align-items: center"><img src="{{ asset('storage/'. $game['user']['avatar']) }}" alt="avatar" width="30" height="30" style="object-fit: cover"> <span style="margin-left: 10px">{{ $game['user']['name'] }}</span></td>
+                                            <td>{{ $game['time'] }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+
+                            <h4 class="mt-5 mb-5">Таблица по времени:</h4>
+                            @foreach($grouped_game_stories as $grouped_game_story)
+                                <h6>Уровень {{ $grouped_game_story[0]['level']['level_number'] }}. {{ $grouped_game_story[0]['level']['name'] }}</h6>
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Место</th>
+                                            <th>Имя</th>
+                                            <th>Время</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($grouped_game_story as $game)
+                                            <tr>
+                                                <td>{{ $game['story_id'] }}</td>
+                                                <td style="display: flex; align-items: center"><img src="{{ asset('storage/'. $game['user']['avatar']) }}" alt="avatar" width="30" height="30" style="object-fit: cover"> <span style="margin-left: 10px">{{ $game['user']['name'] }}</span></td>
+                                                <td>{{ $game['time'] }}</td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                            @endforeach
                         @endif
                     </div>
                 </div>

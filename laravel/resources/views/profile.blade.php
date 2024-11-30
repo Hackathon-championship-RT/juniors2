@@ -26,7 +26,7 @@
 
 <div class='container d-flex justify-content-center' id="profile_card">
 
-    <div class="card border-0" style="width: 60vw; padding: 3% 5%; border-radius: 0">
+    <div class="card border-0" style="width: 60vw; padding: 3% 5%; border-radius: 0; margin-bottom: 40px">
 
 {{--        <button type="button" class="btn btn-primary" data-bs-toggle="modal"--}}
 {{--                data-bs-target="#change_info">--}}
@@ -35,7 +35,7 @@
         <div class="d-flex" style="align-items: center; margin: 0 0 4% 0;">
             <img
                 class="avatar"
-                src="{{ asset('img/' . $user['avatar']) }}"
+                src="{{ asset('storage/' . $user['avatar']) }}"
                 alt="{{ $user['name'] }}"
                 style="width: 110px; border-radius:50%; height: 110px; object-fit: cover"
             >
@@ -50,7 +50,7 @@
             <div class="d-flex" style="margin: 3% 0;">
                 @if($user['telegram_id'] != null)
                     <div class="" style="color: gray; display: flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Telegram" role="img" viewBox="0 0 512 512" width="30px" height="30px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#37aee2"></rect><path fill="#c8daea" d="M199 404c-11 0-10-4-13-14l-32-105 245-144"></path><path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34"></path><path fill="#f6fbfe" d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"></path></g></svg>
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Telegram" role="img" viewBox="0 0 512 512" width="30px" height="30px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#37aee2"></rect><path fill="#c8daea" d="M199 404c-11 0-10-4-13-14l-32-105 245-144"></path><path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34"></path><path fill="#f6fbfe" d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"></path></g></svg>--}}
                         <h6 style="line-height: 30px; margin-left: 8px;">Telegram</h6>
                     </div>
                     <div class="" style="margin-left: 45px">
@@ -74,7 +74,10 @@
                     </div>
                     <div class="" style="margin-left: 45px">
                         <div class="d-flex" style="align-items: center">
-                            <a href="auth/telegram/redirect" style="line-height: 30px; margin-right: 6px; color: black">Добавить</a>
+                            <a href="auth/telegram/redirect" class="a-link" style="font-weight: 500">Добавить</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 6 L 11 12.414062 L 15.292969 16.707031 L 16.707031 15.292969 L 13 11.585938 L 13 6 L 11 6 z"></path>
+                            </svg>
                         </div>
                     </div>
                 @endif
@@ -101,16 +104,30 @@
                 @endif
                 @if($user['email'] == null)
                     <div class="" style="color: gray; display: flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Telegram" role="img" viewBox="0 0 512 512" width="30px" height="30px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#37aee2"></rect><path fill="#c8daea" d="M199 404c-11 0-10-4-13-14l-32-105 245-144"></path><path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34"></path><path fill="#f6fbfe" d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"></path></g></svg>
                         <h6 style="line-height: 30px; margin-left: 8px;">Эл почта</h6>
                     </div>
                     <div class="" style="margin-left: 45px">
                         <div class="d-flex" style="align-items: center">
-                            <a href="{{ route('add_email') }}" style="line-height: 30px; margin-right: 6px; color: black">Добавить</a>
+                            <a href="{{ route('add_email') }}" class="a-link" style="font-weight: 500">Добавить</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+                                <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 6 L 11 12.414062 L 15.292969 16.707031 L 16.707031 15.292969 L 13 11.585938 L 13 6 L 11 6 z"></path>
+                            </svg>
                         </div>
                     </div>
                 @endif
             </div>
+        </div>
+        <div class="add_avatar">
+            <div class="">
+                <h2>Изменение фотографии</h2>
+            </div>
+            <form action="{{ route('add_avatar') }}" class="mb-5" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input name="avatar" type="file" placeholder="Выберите фотографию" class="form-control w-50 mt-4 mb-3">
+                <button type="submit" class="lk_button">
+                    Изменить
+                </button>
+            </form>
         </div>
         <form class="text-center" action="{{ route('logout') }}" method="post">
             @csrf

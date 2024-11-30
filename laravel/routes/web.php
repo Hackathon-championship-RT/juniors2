@@ -9,18 +9,21 @@ use Illuminate\Support\Facades\Route;
 // Главная страница
 
 Route::get('/', function(){
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
 
 // Все страницы сайта
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/levels', [HomeController::class, 'levels'])->name('levels');
 Route::get('/level', [HomeController::class, 'level'])->name('level');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/story', [HomeController::class, 'game_story'])->name('game_story');
+Route::get('/leaderboard', [HomeController::class, 'leaderboard'])->name('leaderboard');
 Route::get('/add_email', [HomeController::class, 'add_email'])->name('add_email');
+Route::get('/add_avatar', [HomeController::class, 'add_avatar'])->name('add_avatar');
 
 // GET
 
@@ -29,6 +32,7 @@ Route::get('/login_telegram', [TelegramController::class, 'login_telegram'])->na
 // POST
 
 Route::post('/add_email', [UserController::class, 'add_email'])->name('add_email');
+Route::post('/add_avatar', [UserController::class, 'add_avatar'])->name('add_avatar');
 
 // Работа с Telegram`ом
 

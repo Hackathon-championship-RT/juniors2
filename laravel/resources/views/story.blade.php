@@ -7,7 +7,7 @@
 
             <div id="study">
 
-                <h2 class="text-center">Уровни игры</h2>
+                <h2 class="text-center">История игр</h2>
 
                 <div class='container'>
 {{--                    <form action="{{ route('search') }}" id="searchLessonForm">--}}
@@ -127,18 +127,29 @@
 {{--                    </form>--}}
 
                     <div class="lesson_all">
-                        @if (empty($levels))
+                        @if (empty($game_stories))
                             <div>
-                                <h4>Ничего не найдено</h4>
+                                <h4>Вы ещё пока не прошли ни одного уровня...(</h4>
                             </div>
                         @endif
 
-                        @if (!empty($levels))
-                                <div class="anket_all d-flex flex-wrap mt-3 mb-3">
-                                @for($i=0;$i<count($levels);$i++)
-                                    @include('search_card')
-                                @endfor
-                            </div>
+                        @if (!empty($game_stories))
+                            <table class="table mt-3">
+                                <thead>
+                                <tr>
+                                    <th>Уровень</th>
+                                    <th>Время</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($game_stories as $game)
+                                    <tr>
+                                        <td>Уровень {{ $game['level']['level_number'] }}. {{ $game['level']['name'] }}</td>
+                                        <td>{{ $game['time'] }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         @endif
                     </div>
                 </div>

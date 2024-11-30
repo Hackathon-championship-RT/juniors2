@@ -21,6 +21,9 @@
 }
 
 body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background: #edf1f5;
 }
 
@@ -55,7 +58,12 @@ div {
 
 .back-img {
     background: url("../img/phone.jpg") fixed;
-    height: 150px;
+    height: 200px;
+}
+
+.back-img2 {
+    background: url("../img/phone2.jpg") fixed no-repeat center     / cover;
+    height: 200px;
 }
 
 .about_home {
@@ -81,7 +89,67 @@ div {
 }
 
 .block:nth-child(odd) {
-    border: 2px solid #40ba21; /* Задаем границу */
+    border: 1px solid #40ba21; /* Задаем границу */
     color: black;
     max-width: 700px;
+}
+
+.logo h1 {
+    transition: all .15s;
+}
+
+.logo:hover h1 {
+    color: #40ba21;
+
+}
+
+footer {
+
+    padding: 50px 0;
+    background: #12152a;
+    color: white;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+#app {
+    flex: 1 1 auto;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-link {
+    line-height: 30px;
+    margin-right: 6px;
+    color: black;
+    transition: .15s;
+}
+
+.a-link:hover {
+    color: #40ba21;
+}
+
+.table tbody {
+    padding: 10px 0;
+    background: none;
+}
+
+.a-header:hover h6 {
+    transition: all .15s;
+    color: #40ba21;
+}
+
+img {
+    transition: opacity 0.2s ease; /* Плавный переход для изменения прозрачности */
+    opacity: 1; /* Исходная непрозрачность */
+}
+
+img.fade-out {
+    opacity: 0; /* Прозрачность при уходе */
 }

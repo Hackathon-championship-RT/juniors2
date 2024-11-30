@@ -30,4 +30,18 @@ class UserController extends Controller
 
         return redirect()->route('profile');
     }
+
+    public function add_avatar()
+    {
+        $request = request()->validate([
+            'avatar' => ['required'],
+        ]);
+        $path = request()->file('avatar')->store('users', 'public');
+
+        User::where('id', Auth::id())->update([
+            'avatar' => $path,
+        ]);
+
+        return redirect()->route('profile');
+    }
 }
