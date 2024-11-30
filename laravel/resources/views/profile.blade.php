@@ -2,36 +2,9 @@
 
 @section('content')
 
-{{--<div class="mt-3 mb-3">--}}
-{{--    @if($message = session()->pull('error_message'))--}}
-{{--        <div class="alert alert-danger mb-0 rounded-0 text-center" role="alert">--}}
-{{--            {{ $message }}--}}
-{{--        </div>--}}
-{{--    @endif--}}
-
-{{--    @if($message = session()->pull('success_message'))--}}
-{{--        <div class="alert alert-success mb-0 rounded-0 text-center" role="alert">--}}
-{{--            {{ $message }}--}}
-{{--        </div>--}}
-{{--    @endif--}}
-{{--</div>--}}
-
-{{--<div class="nav-bar mb-5" style="display: flex; justify-content: center;">--}}
-{{--    <button class="profile_buttons-show"><h6 class="m-1">Профиль</h6></button>--}}
-{{--    <button class="profile_buttons"><h6 class="m-1">Статистика</h6></button>--}}
-{{--    <button class="profile_buttons"><h6 class="m-1">Портфолио</h6></button>--}}
-{{--    <button class="profile_buttons-show"><h6 class="m-1">Для администратора</h6></button>--}}
-{{--    <button class="profile_buttons"><h6 class="m-1">Личный психолог</h6></button>--}}
-{{--</div>--}}
-
 <div class='container d-flex justify-content-center' id="profile_card">
 
-    <div class="card border-0" style="width: 60vw; padding: 3% 5%; border-radius: 0; margin-bottom: 40px">
-
-{{--        <button type="button" class="btn btn-primary" data-bs-toggle="modal"--}}
-{{--                data-bs-target="#change_info">--}}
-{{--            <h6 class="m-1">Редактировать профиль</h6>--}}
-{{--        </button>--}}
+    <div class="card border-0">
         <div class="d-flex" style="align-items: center; margin: 0 0 4% 0;">
             <img
                 class="avatar"
@@ -50,7 +23,6 @@
             <div class="d-flex" style="margin: 3% 0;">
                 @if($user['telegram_id'] != null)
                     <div class="" style="color: gray; display: flex">
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Telegram" role="img" viewBox="0 0 512 512" width="30px" height="30px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#37aee2"></rect><path fill="#c8daea" d="M199 404c-11 0-10-4-13-14l-32-105 245-144"></path><path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34"></path><path fill="#f6fbfe" d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"></path></g></svg>--}}
                         <h6 style="line-height: 30px; margin-left: 8px;">Telegram</h6>
                     </div>
                     <div class="" style="margin-left: 45px">
@@ -124,7 +96,7 @@
             <form action="{{ route('add_avatar') }}" class="mb-5" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input style="border-radius: 0" name="avatar" type="file" placeholder="Выберите фотографию" class="form-control w-50 mt-4 mb-3">
-                <button type="submit" class="lk_button m-0">
+                <button type="submit" class="lk_button m-0" style="padding-left: 20px; padding-right: 20px;">
                     Изменить
                 </button>
             </form>

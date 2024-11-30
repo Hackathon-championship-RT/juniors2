@@ -23,10 +23,6 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/story', [HomeController::class, 'game_story'])->name('game_story');
 Route::get('/leaderboard', [HomeController::class, 'leaderboard'])->name('leaderboard');
 Route::get('/add_email', [HomeController::class, 'add_email'])->name('add_email');
-Route::get('/add_avatar', [HomeController::class, 'add_avatar'])->name('add_avatar');
-Route::get('/react', function () {
-    return view('react');
-});
 
 // GET
 

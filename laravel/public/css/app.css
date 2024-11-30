@@ -176,6 +176,53 @@ tr:nth-child(3) td {
     background: #e6b07e;
 }
 
+.card {
+    width: 60vw;
+    padding: 3% 5%;
+    border-radius: 0;
+    margin-bottom: 40px
+}
+
+@media (max-width: 600px) {
+
+    .md-5 {
+        padding: 0;
+    }
+
+    .container {
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .lk_button {
+        padding: 2px 4px;
+    }
+
+    tr td {
+        font-size: 12px;
+        height: 80px;
+    }
+
+    #profile_card {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin: 0;
+
+    }
+}
+
 .levels_container {
     width: 100%;
     display: flex;
